@@ -1,0 +1,23 @@
+<ons-navigator ng-controller="MapController">
+   <ons-page>
+        <ons-toolbar fixed-style ng-controller="SlidingMenuController">
+            <div class="left">
+                <ons-toolbar-button ng-click="slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">Map</div>
+        </ons-toolbar>
+<div style="position: absolute; width: 100%; height:100%" id="map_canvas"></div>
+        <p style="margin-top:10%">
+            <input type="search" class="search-input" style=" width:60%; z-index:1;margin-left: auto; margin-right:auto;">
+        </p>
+        <p style="position: absolute; text-align: center; width:100%; bottom:0px;">
+                <ons-button  ng-click="deleteAllMarkers()" style="z-index:1;">
+                    Delete all markers        
+                </ons-button>
+                <ons-button ng-click="calculateDistance()" style="z-index:1; margin-left: 5px;">
+                    Distance      
+                </ons-button>
+                </p>
+                
+    </ons-page>
+</ons-navigator>
