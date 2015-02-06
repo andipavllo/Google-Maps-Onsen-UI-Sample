@@ -86,25 +86,7 @@
                 var totalDistance = 0;
                 var partialDistance = [];
                 partialDistance.length = $scope.markers.length - 1;
-                /*
-                var i = 0;
                 
-                var myFun = function() {
-                  ons.notification.alert({
-                     message: 'Hello world! ' + i,
-                     callback: function() {
-                         if (i < 3) {
-                             i++;
-                             myFun();
-                         }
-                     }
-                  });
-                };
-                
-                myFun();
-                
-                return;
-                */
                 for(var i = 0; i < partialDistance.length; i++){
                     var p1 = $scope.markers[i];
                     var p2 = $scope.markers[i+1];
