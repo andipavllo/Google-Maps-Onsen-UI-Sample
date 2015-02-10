@@ -1,0 +1,34 @@
+#map_canvas {
+    position: absolute; 
+    width:100%; 
+    height: 100%; 
+    margin: 0; 
+    padding: 0;   
+    z-index: -1
+}
+
+.search-input-map{
+    width:60%;
+    z-index:1;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.par-search{
+    margin-top:10%
+}
+
+.par-buttons{
+    position: absolute; 
+    text-align: center; 
+    width:100%; 
+    bottom:0px
+}
+
+.btn-delete{
+    z-index:1
+}
+
+.btn-distance{
+    z-index:1; margin-left: 5px;
+}
