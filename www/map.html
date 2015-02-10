@@ -6,18 +6,20 @@
             </div>
             <div class="center">Map</div>
         </ons-toolbar>
-<div style="position: absolute; width: 100%; height:100%" id="map_canvas"></div>
-        <p style="margin-top:10%">
-            <input type="search" class="search-input" style=" width:60%; z-index:1;margin-left: auto; margin-right:auto;">
+        
+        <div id="map_canvas"></div>
+        
+        <p class="par-search">
+            <input type="search" class="search-input search-input-map">
         </p>
-        <p style="position: absolute; text-align: center; width:100%; bottom:0px;">
-                <ons-button  ng-click="deleteAllMarkers()" style="z-index:1;">
-                    Delete all markers        
-                </ons-button>
-                <ons-button ng-click="calculateDistance()" style="z-index:1; margin-left: 5px;">
-                    Distance      
-                </ons-button>
-                </p>
-                
+        
+        <p class="par-buttons">
+            <ons-button  class="btn-delete" ng-click="deleteAllMarkers()">
+                Delete all markers        
+            </ons-button>
+            <ons-button class="btn-distance" ng-click="calculateDistance()">
+                Distance      
+            </ons-button>
+        </p>   
     </ons-page>
 </ons-navigator>

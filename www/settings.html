@@ -1,15 +1,13 @@
 <ons-page>
-
     <ons-toolbar>
         <div class="left">
-            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            <ons-toolbar-button ng-click="slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
         </div>
-        <div class="center">Page 2</div>
+        <div class="center">Settings Page</div>
     </ons-toolbar>
-
+    
     <div style="text-align: center">
-        <h1>Page 2</h1>
-        <ons-button ng-click="app.slidingMenu.toggleMenu()">Toggle Menu</ons-button>
+        <h1>Settings</h1>
+        <ons-button onclick="slidingMenu.setMainPage('map.html')">Back</ons-button>
     </div>
-
 </ons-page>

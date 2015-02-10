@@ -1,32 +1,32 @@
-// This is a JavaScript file
+// controller.js
 
 (function() {
     var app = angular.module('myApp', ['onsen']);
   
+    //Sliding menu controller, swiping management
     app.controller('SlidingMenuController', function($scope){
-      
-        $scope.open = function(){
-            $scope.slidingMenu.setSwipeable(true);
-        };
-        $scope.close = function(){
-            $scope.slidingMenu.setSwipeable(false);
-        };
       
         $scope.checkSlidingMenuStatus = function(){
           
-            $scope.slidingMenu.on('postclose',$scope.close);
-            $scope.slidingMenu.on('postopen',$scope.open);
+            $scope.slidingMenu.on('postclose', function(){
+                $scope.slidingMenu.setSwipeable(false);
+            });
+            $scope.slidingMenu.on('postopen', function(){
+                $scope.slidingMenu.setSwipeable(true);
+            });
         };
       
         $scope.checkSlidingMenuStatus();
     });
 
+    //Map controller
     app.controller('MapController', function($scope, $timeout){
       
         $scope.map;
         $scope.markers = [];
         $scope.markerId = 1;
           
+        //Map initialization  
         $timeout(function(){
       
             var latlng = new google.maps.LatLng(35.7042995, 139.7597564);
@@ -46,7 +46,7 @@
             
         },100);
     
-    
+        //Delete all Markers
         $scope.deleteAllMarkers = function(){
             
             if($scope.markers.length == 0){
@@ -75,6 +75,7 @@
             return x * Math.PI / 180;
         };
         
+        //Calculate the distance between the Markers
         $scope.calculateDistance = function(){
             
             if($scope.markers.length < 2){
@@ -126,11 +127,10 @@
                         }
                     }
                 });
-                
-                //alert("The total distance is " + totalDistance.toFixed(1) + " km");
             }
         };
-    
+        
+        //Add single Marker
         $scope.addOnClick = function(event) {
             var x = event.gesture.center.pageX;
             var y = event.gesture.center.pageY-44;
@@ -149,6 +149,7 @@
             $scope.markerId++;
             $scope.markers.push(marker);
             
+            //Creation of the listener associated to the Markers click
             google.maps.event.addListener(marker, "click", function (e) {
                 ons.notification.confirm({
                     message: 'Do you want to delete the marker?',
