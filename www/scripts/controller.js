@@ -149,7 +149,7 @@
             $scope.markerId++;
             $scope.markers.push(marker);
             
-            $timeout = (function(){
+            $timeout(function(){
                 //Creation of the listener associated to the Markers click
             google.maps.event.addListener(marker, "click", function (e) {
                 ons.notification.confirm({
