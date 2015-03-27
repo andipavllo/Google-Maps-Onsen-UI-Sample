@@ -147,14 +147,12 @@
             
             marker.id = $scope.markerId;
             $scope.markerId++;
-            $scope.markers.push(marker);
-            
-<<<<<<< HEAD
-            //Creation of the listener associated to the Markers click
-=======
+            $scope.markers.push(marker);            
+
+
             $timeout(function(){
-                //Creation of the listener associated to the Markers click
->>>>>>> gh-pages
+            //Creation of the listener associated to the Markers click
+
             google.maps.event.addListener(marker, "click", function (e) {
                 ons.notification.confirm({
                     message: 'Do you want to delete the marker?',
