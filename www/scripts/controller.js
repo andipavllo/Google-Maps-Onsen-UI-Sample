@@ -134,12 +134,9 @@
         $scope.addOnClick = function(event) {
             var x = event.gesture.center.pageX;
             var y = event.gesture.center.pageY-44;
-            var point = new google.maps.Point(x, y);
-            console.log(x + " - " + y);
-            var coordinates = $scope.overlay.getProjection().fromContainerPixelToLatLng(point);
-            
-            console.log(coordinates.lat + ", " + coordinates.lng);
-            
+            var point = new google.maps.Point(x, y);            
+            var coordinates = $scope.overlay.getProjection().fromContainerPixelToLatLng(point);       
+         
             var marker = new google.maps.Marker({
                 position: coordinates,
                 map: $scope.map
